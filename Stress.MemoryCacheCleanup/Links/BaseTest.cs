@@ -11,6 +11,7 @@
     public class BaseTest
     {
         private static Stopwatch StartAt = Stopwatch.StartNew();
+
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
         {
@@ -21,7 +22,9 @@
                     return true;
                 };
             }
+
             CrossInfo.AttachUnitTrace("Unit tests");
+            
             StartAt = Stopwatch.StartNew();
         }
 

@@ -19,11 +19,13 @@ namespace H3Control.Tests
         [TestFixtureSetUp]
         public void TestFixtureSetUp()
         {
+
         }
 
         [Test]
         public void T01()
         {
+            Console.WriteLine("Process: '" + Process.GetCurrentProcess().ProcessName + "'");
             Stopwatch sw = Stopwatch.StartNew();
             while (sw.Elapsed <= TimeSpan.FromSeconds(111))
             {

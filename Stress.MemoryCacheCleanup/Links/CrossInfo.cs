@@ -932,6 +932,7 @@ BuildVersion:	14B25
 
         public static void AttachUnitTrace()
         {
+            Console.WriteLine("Process: '" + Process.GetCurrentProcess().ProcessName + "'");
             long workingSet64 = Process.GetCurrentProcess().WorkingSet64;
             lock (SyncAttachUnitTrace)
             {
@@ -953,10 +954,11 @@ BuildVersion:	14B25
                         }
                         catch (Exception)
                         {
+                            isNunitConsoleOnWindows = true;
                         }
                     }
 
-                if (Environment.OSVersion.Platform == PlatformID.Unix || isNunitConsoleOnWindows)
+                if (true || Environment.OSVersion.Platform == PlatformID.Unix || isNunitConsoleOnWindows)
                 {
                     // mac os x is also goes here
                     ConfigConsoleOnUnixTraceListener();
